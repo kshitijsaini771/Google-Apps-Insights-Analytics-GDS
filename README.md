@@ -40,7 +40,7 @@ Interactive Looker Studio dashboard analyzing 10.3K cleaned Google Play Store ap
 
 ---
 
-![GDS](gds.png)
+![GDS](Looker.PNG)
 
 ---
 
