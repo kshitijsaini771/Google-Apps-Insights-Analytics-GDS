@@ -7,7 +7,7 @@ This interactive Looker Studio dashboard examines a curated dataset of 10,300 cl
 
 ## Dataset
 
-> Original Dataset - `googleplaystore.csv`
+> Original Dataset - [Link](https://www.kaggle.com/datasets/lava18/google-play-store-apps?select=googleplaystore.csv)
 
 The analysis is based on a refined dataset comprising **10,300 Google Play Store applications**, derived from the original source through rigorous data cleaning—including duplicate removal and imputation of missing values. This curated dataset (`googleplaystore.csv`) was produced using the preprocessing pipeline documented in `Google_Play_Store_Analytics_Cleaned_Data.ipynb`. Key descriptive statistics reveal an **average app rating of 4.2**, with **92.6% of apps offered free of charge** and an **average of 14.2 million installs per app**. The apps span **33 distinct categories**, with **GAME** dominating at **21.51% of total installs**, closely followed by **COMMUNICATION** and **SOCIAL**, each accounting for **8.53%**. Install volumes are grouped into four tiers: **Very High** (>1M installs; 4,059 apps), **High** (100K–1M; 1,645 apps), **Medium** (1K–100K), and **Low** (<1K). User ratings are further classified into five performance bands—**Excellent** (4.5–5.0), **Very Good** (4.0–4.5), **Good** (3.0–4.0), **Fair** (2.0–3.0), and **Poor** (≤2.0)—to enable nuanced evaluation. The dataset covers apps released between **2010 and 2018**, capturing temporal trends in app launches, updates, and market evolution over nearly a decade.
 
@@ -39,8 +39,6 @@ The analysis is based on a refined dataset comprising **10,300 Google Play Store
 - Interactive filters for **Category** and **Type** empower stakeholders to drill into specific segments, enabling targeted analysis for product strategy, marketing, and user acquisition planning.
 
 <div align="center">
-
-<h1>
 
 [Click here for Direct Link to Dashboard](https://lookerstudio.google.com/reporting/26f3c8eb-79d8-40f6-848b-b61473c93dd1)
 
