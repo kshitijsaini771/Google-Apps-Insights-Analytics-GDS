@@ -1,75 +1,57 @@
 # Google Play Store Market Intelligence Dashboard
-
-
-</div>
-
 ## Overview
-Interactive Looker Studio dashboard analyzing 10.3K cleaned Google Play Store apps, providing real-time insights on ratings, installs, category performance, and market trends. Empowers stakeholders to make data-driven decisions for app development and marketing strategies.
 
-## Dataset Overview
-- **Size**: 10,300 apps after data cleaning from the original Google Play Store dataset, removing duplicates and handling missing values.
-- **Source**: Cleaned dataset (`cleaned_googleplaystore.csv`) generated from `google-play-store-analytics.ipynb` through comprehensive data preprocessing.
-- **Key Metrics**: Average rating of 4.2 across all apps, 92.6% free apps, average installs of 14.2 million per app.
-- **Categories**: 33 app categories with GAME leading at 21.51% of total installs, followed by COMMUNICATION (8.53%) and SOCIAL (8.53%).
-- **Install Segments**: Categorized into Very High (>1M installs with 4,059 apps), High (100K-1M with 1,645 apps), Medium (1K-100K), and Low (<1K).
-- **Rating Distribution**: Segmented into Excellent (4.5-5), Very Good (4-4.5), Good (3-4), Fair (2-3), and Poor (≤2) for granular performance tracking.
-- **Time Period**: Apps tracked from 2010-2018 showing evolution and update patterns across different years.
+This interactive Looker Studio dashboard examines a curated dataset of 10,300 cleaned Google Play Store apps, delivering real-time analytics on key metrics such as user ratings, installation volumes, category-level performance, and emerging market trends. It equips stakeholders with actionable intelligence to guide strategic decisions in app development, feature prioritization, and marketing initiatives.
 
-## Analysis & Dashboard
-- **Data Preprocessing**:  
-  - Cleaned raw dataset using Python in Jupyter notebook, handling missing ratings, converting size and install formats to numeric values, removing duplicates.
-  - Exported cleaned data to `cleaned_googleplaystore.csv` for dashboard integration, ensuring data quality and consistency for visualization.
-  - Standardized category names, price formats, and date fields to enable accurate filtering and aggregation in Looker Studio.
+---
 
-- **Dashboard Components**:  
-  - Created KPI cards showing total apps (10.3K), average ratings (4.2), free app percentage (92.6%), and average installs (14.2M) for quick executive overview.
-  - Built category distribution pie chart revealing FAMILY (43%), GAME (18.7%), TOOLS (8.1%) as dominant categories by app count.
-  - Designed install performance table segmenting apps by install ranges (1M+, 500K+, 100K+) with corresponding app counts and ratings for performance benchmarking.
-  - Developed treemap visualization showing average installs per category, highlighting GAME's 21.51% share and COMMUNICATION's 8.53% contribution to total installs.
+## Dataset
 
-- **Interactive Features**:  
-  - Added category and type filters enabling stakeholders to drill down into specific app segments and explore free vs paid app dynamics.
-  - Implemented rating distribution stacked bar chart showing performance across install segments, revealing that Very High install apps have 44.19% in Very Good ratings.
-  - Created time-series analysis of record count distribution by rating from 2010-2018, tracking rating quality evolution and identifying 2017-2018 as peak update periods.
+> Original Dataset - `googleplaystore.csv`
 
-- **Insights Delivered**:  
-  - GAME category dominates both app count and install share, validating continued investment in gaming app development.
-  - Higher install segments correlate with better rating distributions, with Very High segment showing 35.75% Excellent ratings versus 5.08% for Low segment.
-  - Free apps constitute 92.6% of the market, confirming freemium as the dominant business model requiring focus on in-app monetization strategies.
-  - Rating quality has improved over time with newer apps (2016-2018) showing higher proportions of Good and Very Good ratings compared to earlier years.
+The analysis is based on a refined dataset comprising **10,300 Google Play Store applications**, derived from the original source through rigorous data cleaning—including duplicate removal and imputation of missing values. This curated dataset (`googleplaystore.csv`) was produced using the preprocessing pipeline documented in `Google_Play_Store_Analytics_Cleaned_Data.ipynb`. Key descriptive statistics reveal an **average app rating of 4.2**, with **92.6% of apps offered free of charge** and an **average of 14.2 million installs per app**. The apps span **33 distinct categories**, with **GAME** dominating at **21.51% of total installs**, closely followed by **COMMUNICATION** and **SOCIAL**, each accounting for **8.53%**. Install volumes are grouped into four tiers: **Very High** (>1M installs; 4,059 apps), **High** (100K–1M; 1,645 apps), **Medium** (1K–100K), and **Low** (<1K). User ratings are further classified into five performance bands—**Excellent** (4.5–5.0), **Very Good** (4.0–4.5), **Good** (3.0–4.0), **Fair** (2.0–3.0), and **Poor** (≤2.0)—to enable nuanced evaluation. The dataset covers apps released between **2010 and 2018**, capturing temporal trends in app launches, updates, and market evolution over nearly a decade.
 
+---
+
+## Analysis
+
+  - Performed comprehensive data cleaning in a Jupyter notebook using Python, addressing missing ratings, converting app size and install counts into numeric formats, and eliminating duplicate entries.  
+  - Exported the refined dataset to `googleplaystore.csv` to support seamless integration with Looker Studio, ensuring reliability and uniformity for downstream visualization.  
+  - Normalized key fields—including category labels, price representations, and date formats—to facilitate precise filtering, grouping, and aggregation within the dashboard. 
+  - Integrated dynamic filters for **Category** and **App Type** (Free/Paid), allowing users to explore performance metrics within specific market segments.  
+  - Developed a stacked bar chart visualizing **rating distribution across install tiers**, highlighting that apps in the Very High install group have 44.19% rated as Very Good.  
+  - Built a time-series view showing the **distribution of app records by rating year-over-year (2010–2018)**, which identified 2017–2018 as periods of peak activity and quality improvements.
+  - The **GAME** category leads significantly in both total app volume and install share, reinforcing its strategic importance for future development investment.  
+  - Apps with higher install volumes tend to receive better ratings—**35.75% of Very High install apps are rated Excellent**, compared to only **5.08% in the Low install segment**.  
+  - **Free apps represent 92.6% of the ecosystem**, underscoring the prevalence of the freemium model and the need to optimize in-app monetization and user retention.  
+  - Overall **rating quality has improved over time**, with apps released between 2016 and 2018 showing notably higher proportions of Good and Very Good ratings than earlier cohorts.
+
+---
+
+## Dashboard
+
+- This dashboard delivers a high-level, real-time overview of the Google Play Store ecosystem, based on an analysis of 9.6K cleaned applications.
+- Key metrics include an **average app rating of 4.2**, **146.6 billion total installs**, and **92.2% of apps being free**, reflecting the dominance of the freemium model.
+- The **App and Reviews by Last Updated** line chart tracks release and update trends from 2010 to 2018, revealing steady growth in both app volume and user reviews over time.
+- A treemap highlights the **Top 10 Categories by App Count**, with FAMILY and GAME categories leading the market, followed by TOOLS and COMMUNICATION.
+- The **Content Rating Distribution** donut chart shows that 80.9% of apps are rated “Everyone,” while only 11.1% target “Teen” audiences—indicating broad accessibility across age groups.
+- The **Free vs Paid Apps by Category** stacked bar chart compares monetization strategies across categories, illustrating how most categories are overwhelmingly dominated by free offerings.
+- Interactive filters for **Category** and **Type** empower stakeholders to drill into specific segments, enabling targeted analysis for product strategy, marketing, and user acquisition planning.
+
+<div align="center">
+
+<h1>
+
+[Click here for Direct Link to Dashboard](https://lookerstudio.google.com/reporting/26f3c8eb-79d8-40f6-848b-b61473c93dd1)
+
+  
+</h1>  
+</div>
 ---
 
 ![GDS](Looker.PNG)
 
 ---
-
-## How to Use
-- Access the live dashboard:  
-  [Google Play Store Market Intelligence Dashboard](https://lookerstudio.google.com/reporting/26f3c8eb-79d8-40f6-848b-b61473c93dd1)
-- Use the interactive filters:  
-  - Select **Category** dropdown to analyze specific app categories (GAME, COMMUNICATION, SOCIAL, etc.)
-  - Toggle **Type** filter to compare Free vs Paid app performance metrics
-  - Click on chart elements to cross-filter and explore relationships between metrics
-- Navigate dashboard sections:  
-  - Top KPI row provides high-level market overview
-  - Category Distribution pie chart shows market composition
-  - Install Performance Table ranks apps by install segments
-  - Rating Distribution chart analyzes quality across install brackets
-  - Time-series chart tracks rating evolution from 2010-2018
-- For data updates:  
-  - Run `google-play-store-analytics.ipynb` with new raw data
-  - Generate updated `cleaned_googleplaystore.csv` file
-  - Upload to Looker Studio data source to refresh dashboard automatically
-- Export insights:  
-  - Download charts as images for presentations
-  - Export filtered data tables to CSV for further analysis
-  - Share dashboard link with stakeholders for collaborative decision-making
-- Best practices:  
-  - Start with category filter to focus on your target market segment
-  - Compare Free vs Paid performance to inform pricing strategies
-  - Monitor rating distribution to identify quality benchmarks
-  - Track time trends to understand market evolution and competitive landscape
 
 ## Author & Contact
 - Name: `Kshitij Saini`    
