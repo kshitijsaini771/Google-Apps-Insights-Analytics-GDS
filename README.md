@@ -1,56 +1,55 @@
-# Google Play Store Market Intelligence Dashboard
-## Overview
+# Google Play Store Market Intelligence Dashboard (Looker Studio)
 
-This interactive Looker Studio dashboard examines a curated dataset of 10,300 cleaned Google Play Store apps, delivering real-time analytics on key metrics such as user ratings, installation volumes, category-level performance, and emerging market trends. It equips stakeholders with actionable intelligence to guide strategic decisions in app development, feature prioritization, and marketing initiatives.
-
----
-
-## Dataset
-
-> Original Dataset - [Link](https://www.kaggle.com/datasets/lava18/google-play-store-apps?select=googleplaystore.csv)
-
-The analysis is based on a refined dataset comprising **10,300 Google Play Store applications**, derived from the original source through rigorous data cleaning—including duplicate removal and imputation of missing values. This curated dataset (`googleplaystore.csv`) was produced using the preprocessing pipeline documented in `Google_Play_Store_Analytics_Cleaned_Data.ipynb`. Key descriptive statistics reveal an **average app rating of 4.2**, with **92.6% of apps offered free of charge** and an **average of 14.2 million installs per app**. The apps span **33 distinct categories**, with **GAME** dominating at **21.51% of total installs**, closely followed by **COMMUNICATION** and **SOCIAL**, each accounting for **8.53%**. Install volumes are grouped into four tiers: **Very High** (>1M installs; 4,059 apps), **High** (100K–1M; 1,645 apps), **Medium** (1K–100K), and **Low** (<1K). User ratings are further classified into five performance bands—**Excellent** (4.5–5.0), **Very Good** (4.0–4.5), **Good** (3.0–4.0), **Fair** (2.0–3.0), and **Poor** (≤2.0)—to enable nuanced evaluation. The dataset covers apps released between **2010 and 2018**, capturing temporal trends in app launches, updates, and market evolution over nearly a decade.
+## Problem Statement
+The Android app ecosystem is highly competitive, and identifying **which categories, price models, and rating patterns drive success** is challenging without structured analytics. This project uses Looker Studio to transform **10,300 cleaned Google Play Store apps** into an interactive dashboard that supports **data-driven decisions** in app development, monetization, and marketing.
 
 ---
 
-## Analysis
-
-  - Performed comprehensive data cleaning in a Jupyter notebook using Python, addressing missing ratings, converting app size and install counts into numeric formats, and eliminating duplicate entries.  
-  - Exported the refined dataset to `googleplaystore.csv` to support seamless integration with Looker Studio, ensuring reliability and uniformity for downstream visualization.  
-  - Normalized key fields—including category labels, price representations, and date formats—to facilitate precise filtering, grouping, and aggregation within the dashboard. 
-  - Integrated dynamic filters for **Category** and **App Type** (Free/Paid), allowing users to explore performance metrics within specific market segments.  
-  - Developed a stacked bar chart visualizing **rating distribution across install tiers**, highlighting that apps in the Very High install group have 44.19% rated as Very Good.  
-  - Built a time-series view showing the **distribution of app records by rating year-over-year (2010–2018)**, which identified 2017–2018 as periods of peak activity and quality improvements.
-  - The **GAME** category leads significantly in both total app volume and install share, reinforcing its strategic importance for future development investment.  
-  - Apps with higher install volumes tend to receive better ratings—**35.75% of Very High install apps are rated Excellent**, compared to only **5.08% in the Low install segment**.  
-  - **Free apps represent 92.6% of the ecosystem**, underscoring the prevalence of the freemium model and the need to optimize in-app monetization and user retention.  
-  - Overall **rating quality has improved over time**, with apps released between 2016 and 2018 showing notably higher proportions of Good and Very Good ratings than earlier cohorts.
+## Analysis Done
+- Cleaned and standardized the original Kaggle dataset (`googleplaystore.csv`) for **10.3K apps**, removing duplicates, imputing missing values, and fixing data types [web:1].
+- Processed installs, app size, price, categories, and dates in Python (`Google_Play_Store_Analytics_Cleaned_Data.ipynb`) to enable accurate filtering and aggregation.
+- Defined **install tiers**: Very High (>1M), High (100K–1M), Medium (1K–100K), Low (<1K), and **rating bands**: Excellent, Very Good, Good, Fair, Poor.
+- Key insights from the refined dataset:
+  - **Average rating:** 4.2  
+  - **Free apps:** 92.6% of total  
+  - **Average installs per app:** 14.2M  
+  - **Top categories by installs:** GAME (21.51%), COMMUNICATION (8.53%), SOCIAL (8.53).
+- Built visual analyses:
+  - **Rating vs Install Tier:** Very High install apps have stronger rating profiles (e.g., 35.75% Excellent vs 5.08% in Low tier).
+  - **Trend over time (2010–2018):** Ratings and app quality improve notably in 2016–2018.
+  - **Category performance:** GAME leads in both app volume and total installs, reinforcing it as a strategic focus area.
+  - **Pricing insights:** Dominance of free apps highlights a freemium-driven ecosystem.
 
 ---
 
-## Dashboard
+## Dashboard Overview
+This Looker Studio dashboard provides an at-a-glance market view of the **Google Play Store**:
 
-- This dashboard delivers a high-level, real-time overview of the Google Play Store ecosystem, based on an analysis of 9.6K cleaned applications.
-- Key metrics include an **average app rating of 4.2**, **146.6 billion total installs**, and **92.2% of apps being free**, reflecting the dominance of the freemium model.
-- The **App and Reviews by Last Updated** line chart tracks release and update trends from 2010 to 2018, revealing steady growth in both app volume and user reviews over time.
-- A treemap highlights the **Top 10 Categories by App Count**, with FAMILY and GAME categories leading the market, followed by TOOLS and COMMUNICATION.
-- The **Content Rating Distribution** donut chart shows that 80.9% of apps are rated “Everyone,” while only 11.1% target “Teen” audiences—indicating broad accessibility across age groups.
-- The **Free vs Paid Apps by Category** stacked bar chart compares monetization strategies across categories, illustrating how most categories are overwhelmingly dominated by free offerings.
-- Interactive filters for **Category** and **Type** empower stakeholders to drill into specific segments, enabling targeted analysis for product strategy, marketing, and user acquisition planning.
+- **Scope:** ~9.6K cleaned apps, **146.6B installs**, average rating **4.2**, and **92.2% free apps**.
+- **App & Reviews by Last Updated:** Line chart showing growth in updates and reviews from 2010–2018, capturing ecosystem maturity.
+- **Top 10 Categories by App Count:** Treemap with FAMILY, GAME, TOOLS, and COMMUNICATION as leading segments.
+- **Content Rating Distribution:** Donut chart where **80.9% of apps are rated “Everyone”**, and 11.1% target “Teen”, indicating broad family-friendly coverage.
+- **Free vs Paid by Category:** Stacked bar chart highlighting that most categories are heavily skewed toward free apps.
+- **Interactive Filters:** Category and Type (Free/Paid) filters support focused analysis by segment, monetization model, or niche.
 
 <div align="center">
 
-[Click here for Direct Link to Dashboard](https://lookerstudio.google.com/reporting/26f3c8eb-79d8-40f6-848b-b61473c93dd1)
+[Direct Link to Dashboard](https://lookerstudio.google.com/reporting/26f3c8eb-79d8-40f6-848b-b61473c93dd1)
 
-  
-</h1>  
 </div>
+
+![Looker Studio Dashboard](Looker.PNG)
+
 ---
 
-![GDS](Looker.PNG)
+## Recommendations
+- **Double down on winning categories:** Prioritize GAME, FAMILY, TOOLS, and COMMUNICATION for new launches and feature investments.
+- **Optimize freemium strategies:** With over 90% apps free, focus on in-app purchases, ads, and retention loops instead of upfront pricing.
+- **Design for “Everyone”:** Given the dominance of “Everyone”-rated apps, build broadly accessible experiences while testing teen-focused niches where relevant.
+- **Leverage high-install quality patterns:** Use insights from Very High tier apps (higher Excellent/Very Good share) as benchmarks for UX, performance, and update cadence.
+- **Monitor recent cohorts:** Apps launched/updated between 2016–2018 show better ratings—adopt similar release and iteration patterns for future products.
 
 ---
 
-## Author & Contact
-- Name: `Kshitij Saini`    
-- LinkedIn: [https://www.linkedin.com/in/kshitijsaini](https://www.linkedin.com/in/kshitij-saini-b950b7299?utm_source=share_via&utm_content=profile&utm_medium=member_android)
+**Author:** `Kshitij Saini`  
+**LinkedIn:** [https://www.linkedin.com/in/kshitijsaini](https://www.linkedin.com/in/kshitijsaini-b950b7299?utm_source=share_via&utm_content=profile&utm_medium=member_android)
